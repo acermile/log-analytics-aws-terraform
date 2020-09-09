@@ -2,7 +2,7 @@
 
 Jenkinsfile.init(this)
 
-ParameterStoreBuildWrapperPlugin.withPathPattern { options -> "/ps/${options['environment']}/${options['repoName']}" }
+ParameterStoreBuildWrapperPlugin.withPathPattern { options -> "/acermile/${options['environment']}/${options['repoName']}" }
                                 .init()
 AnsiColorPlugin.init()          // REQUIRED: Decorate your TerraformEnvironmentStages with the AnsiColor plugin
 //def validate = new TerraformValidateStage()

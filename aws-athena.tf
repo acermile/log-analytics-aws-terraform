@@ -1,7 +1,7 @@
-resource "aws_s3_bucket" "query-results" {
+/* resource "aws_s3_bucket" "query-results" {
   bucket = "${var.environment}-query-results-csa"
   acl    = "private"
-}
+} */
 
 /*resource "aws_athena_database" "fromglue" {
   name   = aws_glue_catalog_database.aws_glue_catalog_database.name
@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "query-results" {
   description             = "Athena KMS Key"
 }*/
 
-resource "aws_athena_workgroup" "order-results" {
+/*resource "aws_athena_workgroup" "order-results" {
   name = "${var.environment}-order-results"
 
   configuration {
@@ -26,16 +26,16 @@ resource "aws_athena_workgroup" "order-results" {
       /*  encryption_configuration {
         encryption_option = "SSE_KMS"
         kms_key_arn       = aws_kms_key.test.arn
-      }*/
+      }
     }
   }
-}
+}*/
 
 
 
 resource "aws_athena_named_query" "named-query" {
-  name      = "preview-orders"
-  workgroup = aws_athena_workgroup.order-results.id
+  name      = "${var.environment}-preview-orders"
+  workgroup = "primary"
   database  = aws_glue_catalog_database.aws_glue_catalog_database.name
-  query     = "SELECT * FROM ${aws_glue_catalog_database.aws_glue_catalog_database.name} limit 10;"
+  query     = "SELECT * FROM \"${aws_glue_catalog_database.aws_glue_catalog_database.name}\".\"${var.environment}-order-data09\" where col7 like '%France%' limit 100;"
 }

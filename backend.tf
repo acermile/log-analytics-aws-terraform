@@ -2,7 +2,7 @@ terraform {
 
   backend "s3" {
     bucket  = "amit-eks-remote-backend"
-    key     = "cluster-infrastructure.tfstate"
+    key     = "log-analytics"
     region  = "us-east-1"
     profile = "csa"
     //profile = "default"

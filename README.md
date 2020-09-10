@@ -13,7 +13,7 @@
 -  aws_kinesis_stream.order_logs_stream: Still creating... [1m10s elapsed]
 -  aws_kinesis_stream.order_logs_stream: Creation complete after 1m10s [id=arn:aws:kinesis:us-east-1:942960519349:stream/uat-amnidhiorders]
 - aws_lambda_event_source_mapping.kinesis_source_mapping: Creating...
-8. aws_lambda_event_source_mapping.kinesis_source_mapping: Creation complete after 6s [id=8f5a0dfb-642c-464a-8937-429ba90653ea]
+-  aws_lambda_event_source_mapping.kinesis_source_mapping: Creation complete after 6s [id=8f5a0dfb-642c-464a-8937-429ba90653ea]
 -  aws_instance.kinesis-host-ec2: Still creating... [10s elapsed]
 -  aws_instance.kinesis-host-ec2: Still creating... [20s elapsed]
 - aws_instance.kinesis-host-ec2: Still creating... [30s elapsed]

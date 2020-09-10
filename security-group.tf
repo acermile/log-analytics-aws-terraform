@@ -10,7 +10,7 @@ resource "aws_security_group" "kinesis-host-sg" {
       from_port   = port.value
       to_port     = port.value
       protocol    = "tcp"
-      cidr_blocks = ["59.144.18.118/32"] //change it to your machine IP or bastion Host for security
+      cidr_blocks = ["0.0.0.0/0"] //change it to your machine IP or bastion Host for security
     }
   }
 
